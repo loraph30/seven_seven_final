@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">seven_seven_final</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="user_name">User Name</string>
+    <string name="user_password">Password</string>
+    <string name="welcome_message">Welcome</string>
+    <string name="login_button">Login</string>
+    <string name="incorrect_message">Please Try again. Incorrect user name or password.</string>
+</resources>
