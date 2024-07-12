@@ -38,18 +38,19 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var currentUserNameEditText = view.findViewById<EditText>(R.id.user_name)
-        var currentUserNameText = currentUserNameEditText.text
-        var currentPasswordEditText = view.findViewById<EditText>(R.id.user_name)
-        var currentPasswordText = currentPasswordEditText.text
+
+        val currentUserNameEditText = view.findViewById<EditText>(R.id.user_name)
+        val currentUserNameText = currentUserNameEditText.text
+        val currentPasswordEditText = view.findViewById<EditText>(R.id.user_name)
+        val currentPasswordText = currentPasswordEditText.text
         val incorrectMessage = view.findViewById<TextView>(R.id.incorrect_message)
 
-        binding.buttonFirst.setOnClickListener {
+        // login button
+        binding.buttonLogin.setOnClickListener {
             viewModel.postUserName(currentUserNameText.toString())
             viewModel.postUserPassword(currentPasswordText.toString())
-//            incorrectMessage.isInvisible
             if(viewModel.getUserName() == (viewModel.getCurrentUserName()) && viewModel.getPassword() == viewModel.getCurrentPassword()) {
-                findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+                findNavController().navigate(R.id.action_LoginFragment_to_WelcomeFragment)
             } else {
                 incorrectMessage.setVisibility(View.VISIBLE)
             }
